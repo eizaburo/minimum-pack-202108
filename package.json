@@ -4,8 +4,10 @@
     "jest": "^27.0.6"
   },
   "dependencies": {
+    "chromedriver": "^92.0.1",
     "faker": "^5.5.3",
     "node-fetch": "^2.6.1",
-    "qs": "^6.10.1"
+    "qs": "^6.10.1",
+    "selenium-webdriver": "^4.0.0-beta.4"
   }
 }
