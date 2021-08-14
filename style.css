@@ -66,13 +66,24 @@ label{
 
 input[type="text"]{
     width: 100%;
+    padding: 5px;
 }
 
 textarea{
     width: 100%;
     resize: none;
+    padding: 5px;
 }
 
 button{
     margin-top: 10px;
+}
+
+.form-error{
+    font-size: small;
+    color: red;
+}
+
+.hidden{
+    display: none;
 }

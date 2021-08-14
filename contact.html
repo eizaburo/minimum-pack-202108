@@ -23,10 +23,12 @@
                 <div>
                     <label>Email</label>
                     <input type="text" id="email" />
+                    <span id="email-error" class="form-error hidden">Emailは必須かつEmailの形式で入力してください。</span>
                 </div>
                 <div>
                     <label>お問合せ内容</label>
                     <textarea rows=3 id="body"></textarea>
+                    <span id="body-error" class="form-error hidden">お問合せ内容は必須かつ10文字以内で入力してください。</span>
                 </div>
                 <div>
                     <button id="btn">送信</button>
