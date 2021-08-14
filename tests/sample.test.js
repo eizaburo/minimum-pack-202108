@@ -5,7 +5,7 @@ const api_url = "https://script.google.com/macros/s/AKfycby2FEgoNfQvSAYWOZnpWsIy
 
 it("GAS APIテスト：正常", async () => {
     const res = await frisby.post(api_url, {
-        body: "email=test@test.local&body=foooooo&channel=test",
+        body: "email=test@test.local&body=foooooo&channel=unit-test",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -15,7 +15,7 @@ it("GAS APIテスト：正常", async () => {
 
 it("GAS APIテスト：Email不正", async () => {
     const res = await frisby.post(api_url, {
-        body: "email=test&body=foooooo&channel=test",
+        body: "email=test&body=foooooo&channel=unit-test",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -25,7 +25,7 @@ it("GAS APIテスト：Email不正", async () => {
 
 it("GAS APIテスト：問合せ内容不正", async () => {
     const res = await frisby.post(api_url, {
-        body: "email=test@test.local&body=foooooooooooooo&channel=test",
+        body: "email=test@test.local&body=foooooooooooooo&channel=unit-test",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         }

@@ -24,7 +24,7 @@ let sumTime = 0; //合計時間
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: encodeURI(`email=test@tset.local&body=aaa`)
+            body: encodeURI(`email=test@tset.local&body=aaa&channel=performance-test`)
         });
         const text = await response.text();
         console.log(text);
