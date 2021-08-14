@@ -55,35 +55,52 @@ footer {
 
 /* Contact用 */
 
-form{
+form {
     width: 60%;
 }
 
-label{
+label {
     display: block;
     margin-top: 15px;
 }
 
-input[type="text"]{
+input[type="text"] {
     width: 100%;
     padding: 5px;
+    box-sizing: border-box;
 }
 
-textarea{
+textarea {
     width: 100%;
     resize: none;
     padding: 5px;
+    box-sizing: border-box;
 }
 
-button{
+button {
     margin-top: 10px;
 }
 
-.form-error{
+.form-error {
     font-size: small;
     color: red;
 }
 
-.hidden{
+.hidden {
     display: none;
+}
+
+@media screen and (max-width:640px) {
+    nav, footer{
+        background-color: #aac;
+    }
+
+    form{
+        width: 90%;
+    }
+
+    button{
+        width: 100%;
+        padding: 10px;
+    }
 }
