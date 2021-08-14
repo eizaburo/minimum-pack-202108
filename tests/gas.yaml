@@ -4,13 +4,13 @@ info:
   title: GAS上のAPIをテスト
   description: 最小限のテストAPIです。
 servers:
-  - url: https://script.google.com/macros/s/AKfycbx3gKTYfJsYLTcTd0Z8Wpg5W8RHj_g5AHuYqXt-9a6sYHCkKttpg3q-5YQY-lhNx4xWsQ
+  - url: https://script.google.com/macros/s/AKfycby2FEgoNfQvSAYWOZnpWsIy2x17-zqg-gc9lz3CX0Yb6NClP0MfmmplDGYmNwH3MY6onA
 paths:
   /exec:
     post:
       requestBody:
         content:
-          multipart/form-data:
+          application/x-www-form-urlencoded:
             schema:
               type: object
               properties:

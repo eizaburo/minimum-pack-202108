@@ -1,10 +1,9 @@
 //必要なコンポーネント読み込み
 const fetch = require("node-fetch");
 const performance = require("perf_hooks").performance;
-const faker = require("faker");
 
 //APIのURL
-const base_url = "https://script.google.com/macros/s/AKfycbx3gKTYfJsYLTcTd0Z8Wpg5W8RHj_g5AHuYqXt-9a6sYHCkKttpg3q-5YQY-lhNx4xWsQ/exec";
+const base_url = "https://script.google.com/macros/s/AKfycby2FEgoNfQvSAYWOZnpWsIy2x17-zqg-gc9lz3CX0Yb6NClP0MfmmplDGYmNwH3MY6onA/exec";
 
 //各種変数
 const loop = 3; //ループ回数
@@ -25,9 +24,10 @@ let sumTime = 0; //合計時間
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: encodeURI(`email=${faker.internet.email()}&body=${faker.lorem.words(30)}`)
+            body: encodeURI(`email=test@tset.local&body=aaa`)
         });
         const text = await response.text();
+        console.log(text);
 
         //終了時間取得
         const endTime = performance.now();

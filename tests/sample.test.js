@@ -1,19 +1,34 @@
 const frisby = require("frisby");
 // const qs = require("qs");
 
-const api_url = "https://script.google.com/macros/s/AKfycbx3gKTYfJsYLTcTd0Z8Wpg5W8RHj_g5AHuYqXt-9a6sYHCkKttpg3q-5YQY-lhNx4xWsQ/exec";
+const api_url = "https://script.google.com/macros/s/AKfycby2FEgoNfQvSAYWOZnpWsIy2x17-zqg-gc9lz3CX0Yb6NClP0MfmmplDGYmNwH3MY6onA/exec";
 
-it("GAS APIテスト", async () => {
+it("GAS APIテスト：正常", async () => {
     const res = await frisby.post(api_url, {
-        // body: qs.stringify({
-        //     email: "test@test.local",
-        //     body: "hogehoge",
-        //     channel: "test"
-        // }),
-        body: "email=test@test.com&body=foooooo&channel=test",
+        body: "email=test@test.local&body=foooooo&channel=test",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         }
     });
     expect(res._body).toBe("受付けました。");
+});
+
+it("GAS APIテスト：Email不正", async () => {
+    const res = await frisby.post(api_url, {
+        body: "email=test&body=foooooo&channel=test",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    });
+    expect(res._body).toBe("エラーです。");
+});
+
+it("GAS APIテスト：問合せ内容不正", async () => {
+    const res = await frisby.post(api_url, {
+        body: "email=test@test.local&body=foooooooooooooo&channel=test",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    });
+    expect(res._body).toBe("エラーです。");
 });
